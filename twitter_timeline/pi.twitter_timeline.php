@@ -179,16 +179,16 @@ class Twitter_timeline {
 						switch($type)
 						{
 							case 'user_mentions':	$find[]		= '@'.$info['screen_name'];
-													$replace[]	= "<a title='{$info['name']}' href='http://twitter.com/{$info['screen_name']}'>@{$info['screen_name']}</a>";
+													$replace[]	= "<a title='{$info['name']}' href='http://twitter.com/{$info['screen_name']}' target='_blank'>@{$info['screen_name']}</a>";
 								break;
 							case 'hashtags':		$find[]		= '#'.$info['text'];
-													$replace[]	= "<a title='Search for {$info['text']}' href='http://twitter.com/search?q=%23{$info['text']}'>#{$info['text']}</a>";
+													$replace[]	= "<a title='Search for {$info['text']}' href='http://twitter.com/search?q=%23{$info['text']}' target='_blank'>#{$info['text']}</a>";
 								break;
 							case 'urls':			$find[]		= $info['url'];
-													$replace[]	= "<a title='{$info['expanded_url']}' href='{$info['url']}'>{$info['url']}</a>";
+													$replace[]	= "<a title='{$info['expanded_url']}' href='{$info['url']}' target='_blank'>{$info['url']}</a>";
 								break;
 							case 'media':			$find[]		= $info['url'];
-													$replace[]	= "<a title='{$info['expanded_url']}' href='{$info['url']}'>{$info['url']}</a>";
+													$replace[]	= "<a title='{$info['expanded_url']}' href='{$info['url']}' target='_blank'>{$info['url']}</a>";
 								break;
 							default:
 								break;
